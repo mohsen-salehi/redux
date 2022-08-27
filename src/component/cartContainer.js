@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import CartItem from "./CartItem";
-import clearCartAction from "../redux/actions/clearItemAction";
+import modalAction from "../redux/actions/modalAction";
 
 const CartContainer = () => {
     const {cartItems, total, amount} = useSelector(state => state.cart);
@@ -30,10 +30,10 @@ const CartContainer = () => {
                 <hr/>
                 <footer className="row">
                     <h4 className="col-12 text-center">T o t a l s</h4>
-                    <span className="col-12 row fw-bold display-6 justify-content-center align-items-center ">${total}</span>
+                    <span className="col-12 row fw-bold display-6 justify-content-center align-items-center ">${total.toFixed(2)}</span>
 
                     <div className="col-12 row justify-content-center mt-3">
-                        <button className="btn col-2 btn-danger" onClick={e=> dispatch(clearCartAction()) }>Clear Items</button>
+                        <button className="btn col-2 btn-danger" onClick={e=> dispatch(modalAction(true)) }>Clear Items</button>
                     </div>
                 </footer>
             </div>

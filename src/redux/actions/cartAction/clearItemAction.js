@@ -1,9 +1,9 @@
-import cartSlice from "../slices/cartSlice";
+import cartSlice from "../../slices/cartSlice";
 
 const { clearCart } = cartSlice.actions;
 
 const clearCartAction = ()=> (dispatch)=>{
-  dispatch(clearCart([]))
+ dispatch(clearCart())
 }
 
 export default clearCartAction;
